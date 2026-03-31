@@ -1,7 +1,7 @@
 ---
-name: tbar
-description: Manage your TODO list with tbar — a macOS menu bar TODO app with CLI. Add, complete, track tasks, and view history.
-argument-hint: [command] [args] (e.g., "add API design --priority high", "done 1", "list")
+name: "tbar"
+description: "Manage your TODO list with tbar - a macOS menu bar TODO app with CLI. Add, complete, track tasks, and view history."
+argument-hint: "command args (e.g. add, done 1, list)"
 ---
 
 # tbar — Agent Task Management
