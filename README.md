@@ -4,7 +4,7 @@ tbar is a native macOS menu bar TODO manager with a matching CLI. It keeps a sin
 
 ## Screenshot
 
-_Screenshot coming soon._
+![tbar menu bar](docs/images/menu-bar-screenshot.png)
 
 ## Features
 
