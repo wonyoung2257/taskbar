@@ -89,6 +89,8 @@ struct TBar {
             try PriorityCommand(arguments: tail).run()
         case "search":
             try SearchCommand(arguments: tail).run()
+        case "history":
+            try HistoryCommand(arguments: tail).run()
         default:
             throw ValidationError("Unknown command '\(command)'.\n\n\(usage)")
         }
@@ -106,6 +108,7 @@ struct TBar {
       delete <id>
       priority <id> <high|medium|low>
       search <keyword>
+      history [--days N] [--date YYYY-MM-DD]
       --version
     """
 }

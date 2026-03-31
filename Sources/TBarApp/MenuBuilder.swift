@@ -10,6 +10,7 @@ final class MenuBuilder: NSObject {
     private let appVersion: String
     private var icons: PriorityIcons
     private var preferencesWindow: PreferencesWindow?
+    private var historyWindow: HistoryWindow?
 
     private var todoViews: [Int: CheckboxMenuItemView] = [:]
 
@@ -50,6 +51,14 @@ final class MenuBuilder: NSObject {
 
         menu.addItem(NSMenuItem.separator())
 
+        let historyItem = NSMenuItem(
+            title: "History…",
+            action: #selector(openHistory),
+            keyEquivalent: "h"
+        )
+        historyItem.target = self
+        menu.addItem(historyItem)
+
         let settingsItem = NSMenuItem(
             title: "Settings…",
             action: #selector(openSettings),
@@ -69,6 +78,13 @@ final class MenuBuilder: NSObject {
         let versionItem = NSMenuItem(title: "tbar v\(appVersion)", action: nil, keyEquivalent: "")
         versionItem.isEnabled = false
         menu.addItem(versionItem)
+    }
+
+    @objc private func openHistory() {
+        if historyWindow == nil {
+            historyWindow = HistoryWindow(store: store)
+        }
+        historyWindow?.show()
     }
 
     @objc private func openSettings() {
